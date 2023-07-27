@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+        nodejs: 18
+    commands:
+        - echo Installing source NPM dependencies...
+        - npm install
+        - npm install -g @angular/cli@8.1.2
+  build:
+    commands:
+        - echo "Building Angular Project..." 
+        - ng build --prod
+  post_build:
+    commands:
+        - echo "updating file in the s3 bucket" 
+        - aws s3 sync dist/PORTAL-APP/ s3://yogesh.flentas.io --delete
