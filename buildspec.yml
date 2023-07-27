@@ -8,13 +8,13 @@ phases:
 
         runtime-versions:
 
-            nodejs: 18
+            nodejs: 12
 
         commands:
 
             - echo Entered the install phase..
 
-            -  npm install -g @angular/cli@8.1.2
+            -  npm install -g @angular/cli@10.0.8
 
     pre_build:
 
