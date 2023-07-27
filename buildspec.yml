@@ -41,7 +41,16 @@ phases:
             - echo "Updating files in the S3 bucket..."
             - ls
             - pwd
-            - aws s3 sync dist/github-s3-angular-app/ s3://yogesh.flentas.io --delete
+            # - aws s3 sync dist/github-s3-angular-app/ s3://yogesh.flentas.io --delete
+artifacts:
+
+    files:
+
+        - 'github-s3-angular-app/**/*'
+
+    name: yogesh-artifact
+
+    base-directory: 'dist'
 
 
-      
+  
